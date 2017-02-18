@@ -19,11 +19,11 @@
 
   <body>
 
-    <header class="site-header" role="banner">
+    <header class="site-header" role="banner"style="background-color: black;box-shadow: 2px 2px 2px gray;height: 50px;">
 
-  <div class="wrapper">
+  <div class="wrapper" >
 
-    <a class="site-title" href="/">Hugo的个人博客网站</a>
+    <a class="site-title" href="/" style="color: white">Hugo的个人博客网站</a>
 
     <nav class="site-nav">
       <span class="menu-icon">
@@ -37,7 +37,7 @@
       <div class="trigger">
         
           
-          <a class="page-link" href="/about/">关于</a>
+          <a class="page-link" href="/about/" style="color: white">关于</a>
           
         
           
@@ -56,8 +56,8 @@
 </header>
 
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper" style="height: 100%">
+    <main class="page-content" aria-label="Content" style="overflow: scroll;box-sizing: border-box;">
+      <div class="wrapper" style="box-shadow: 3px 3px 3px gray" id="conetnt">
        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
@@ -107,7 +107,7 @@
       </div>
     </main>
 
-    <footer class="site-footer" style="margin-top: 10%;">
+    <footer class="site-footer"  style="position: fixed;width: 100%;bottom: 0;padding:10px 0px 0px 0px;height: 200px;background-color: white;margin-top: 20px;">
 
   <div class="wrapper">
 
@@ -163,7 +163,14 @@
 
 </footer>
 
-
+<script type="text/javascript">
+  var main = document.getElementsByTagName('main');
+  var content = document.getElementById('conetnt');
+  var height = window.innerHeight-270;
+  main[0].style.height =height+'px';
+  content.style.minHeight = height+'px';
+  console.log(main[0].style.height);
+</script>
   </body>
 
 </html>
