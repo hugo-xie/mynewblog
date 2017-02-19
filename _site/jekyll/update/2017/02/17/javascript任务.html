@@ -22,9 +22,7 @@
     <header class="site-header" role="banner"style="background-color: black;box-shadow: 2px 2px 2px gray;height: 50px;">
 
   <div class="wrapper" >
-
     <a class="site-title" href="/" style="color: white">Hugo的个人博客网站</a>
-
     <nav class="site-nav">
       <span class="menu-icon">
         <svg viewBox="0 0 18 15" width="18px" height="15px">
@@ -33,21 +31,8 @@
           <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
         </svg>
       </span>
-
       <div class="trigger">
-        
-          
           <a class="page-link" href="/about/" style="color: white">关于</a>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
       </div>
     </nav>
 
@@ -56,7 +41,68 @@
 </header>
 
 
-    <main class="page-content" aria-label="Content" style="overflow: scroll;box-sizing: border-box;">
+    <!-- <main class="page-content" aria-label="Content" style="display: flex;flex-direction: row;flex-wrap: wrap;justify-content: flex-start;align-items: flex-start;overflow: scroll;">
+      <div style="width: 20%;height: 500px;padding: 20px 20px 20px 20px">
+        <div style="text-align: center;">谢宇</div>
+        <div style="background-image: url(/images/weixin.jpg); height: 300px;background-repeat: no-repeat;background-size: 100% 100%;border:1px dotted gray"></div>
+        <div style="padding: 5px;">
+          <h2>Hugo-xie</h2>
+          <h3 style="color: lightgray">Programer / LOLer / Arsenaler</h3>
+        </div>
+      </div>
+      <div style="width: 60%;">
+        <div class="wrapper" style="box-shadow: 3px 3px 3px gray" id="conetnt">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">javascript中的task和microtask!</h1>
+    <p class="post-meta"><time datetime="2017-02-17T20:51:48+08:00" itemprop="datePublished">Feb 17, 2017</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2>javascript中的task和microtask</h2>
+
+<h3 style="color: green">先看一段代码</h3>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'1'</span><span class="p">);</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'2'</span><span class="p">);</span>
+     <span class="p">},</span><span class="mi">0</span><span class="p">);</span>
+    <span class="nx">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'3'</span><span class="p">);</span>
+      <span class="p">});</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"4"</span><span class="p">);</span></code></pre></figure>
+
+<p>这个代码最终输出的结果是：</p>
+<h3>1,4,3,2</h3>
+
+<p>你答对了吗？这里有两个坑，第一个就是setTimeout()的第二个参数如果是0，那么其中的函数也不会立即执行，而是会放在下一轮的event loop里面。第二个坑就是javascript里的任务分为正常任务task和微任务microtask.</p>
+
+<h4 style="color: lightblue">正常任务和微任务</h4>
+<p>正常任务就是指那些不会在当前的event loop里面执行的任务，比如setTimeout()中的任务，不管它定义的执行时间是多久之后，它都是会被放在下一轮事件循环里执行的，但是微任务不一样，微任务是放在当前事件循环的末尾，也就是说在当前事件循环里的
+任务都完成以后，就会去执行本轮事件循环末尾的微任务。</p>
+
+<p>常见的回调任务都属于正常任务。</p>
+
+<p>微任务当前只有以下两种</p>
+<div style="border-left: 5px solid lightblue;color: light">
+  <ul>
+  <li>Promise</li>
+  <li>nodejs中的process.nextTick</li>
+</ul>
+</div>
+
+
+  </div>
+
+  
+</article>
+
+        </div>
+      </div>
+      
+    </main> -->
+   <main class="page-content" aria-label="Content" style="overflow: scroll;box-sizing: border-box;">
       <div class="wrapper" style="box-shadow: 3px 3px 3px gray" id="conetnt">
        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -105,8 +151,7 @@
 </article>
 
       </div>
-    </main>
-
+   </main>
     <footer class="site-footer"  style="position: fixed;width: 100%;bottom: 0;padding:10px 0px 0px 0px;height: 200px;background-color: white;margin-top: 20px;">
 
   <div class="wrapper">
@@ -140,7 +185,7 @@
           
           <li>
             <span class="icon icon--twitter">微博
-</span><a ><span class="username">realhugo</span></a>
+            </span><a ><span class="username">realhugo</span></a>
 
           </li>
           <li>

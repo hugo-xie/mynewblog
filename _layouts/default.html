@@ -22,9 +22,7 @@
     <header class="site-header" role="banner"style="background-color: black;box-shadow: 2px 2px 2px gray;height: 50px;">
 
   <div class="wrapper" >
-
     <a class="site-title" href="/" style="color: white">Hugo的个人博客网站</a>
-
     <nav class="site-nav">
       <span class="menu-icon">
         <svg viewBox="0 0 18 15" width="18px" height="15px">
@@ -33,21 +31,8 @@
           <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
         </svg>
       </span>
-
       <div class="trigger">
-        
-          
           <a class="page-link" href="/about/" style="color: white">关于</a>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
       </div>
     </nav>
 
@@ -56,12 +41,27 @@
 </header>
 
 
-    <main class="page-content" aria-label="Content" style="overflow: scroll;box-sizing: border-box;">
+    <!-- <main class="page-content" aria-label="Content" style="display: flex;flex-direction: row;flex-wrap: wrap;justify-content: flex-start;align-items: flex-start;overflow: scroll;">
+      <div style="width: 20%;height: 500px;padding: 20px 20px 20px 20px">
+        <div style="text-align: center;">谢宇</div>
+        <div style="background-image: url(/images/weixin.jpg); height: 300px;background-repeat: no-repeat;background-size: 100% 100%;border:1px dotted gray"></div>
+        <div style="padding: 5px;">
+          <h2>Hugo-xie</h2>
+          <h3 style="color: lightgray">Programer / LOLer / Arsenaler</h3>
+        </div>
+      </div>
+      <div style="width: 60%;">
+        <div class="wrapper" style="box-shadow: 3px 3px 3px gray" id="conetnt">
+         {{content}}
+        </div>
+      </div>
+      
+    </main> -->
+   <main class="page-content" aria-label="Content" style="overflow: scroll;box-sizing: border-box;">
       <div class="wrapper" style="box-shadow: 3px 3px 3px gray" id="conetnt">
        {{content}}
       </div>
-    </main>
-
+   </main>
     <footer class="site-footer"  style="position: fixed;width: 100%;bottom: 0;padding:10px 0px 0px 0px;height: 200px;background-color: white;margin-top: 20px;">
 
   <div class="wrapper">
@@ -95,7 +95,7 @@
           
           <li>
             <span class="icon icon--twitter">微博
-</span><a ><span class="username">realhugo</span></a>
+            </span><a ><span class="username">realhugo</span></a>
 
           </li>
           <li>
