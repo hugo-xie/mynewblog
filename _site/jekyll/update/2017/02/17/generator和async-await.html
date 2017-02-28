@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>hugo的个人网站</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="applicable-device"content="pc,mobile"/>
+  <link rel="stylesheet" href="/images/new.css">
+  <style type="text/css">
+  a{
+    color: rgb(181,181,181);
+    text-decoration: none;
+    margin-left: 50px;
+    display: inline-block;
+  }
+  a:hover{
+    color: rgb(44,60,73);
+  }
+  h1{
+    color: rgb(181,181,181);
+  }
+  </style>
+</head>
+<body style="padding: 0px;margin: 0px;">
+<div style="width: 100%;background-color: rgb(44,60,73);color:white;line-height: 50px; ">
+   <a href="/" style="color: white">Hugo的个人网站</a>
+</div>
+<div style="width: 100%;line-height:40px;background-color: rgb(236,236,236);">
+  <a href="/">Home</a>
+  <a href="https://github.com/hugo-xie">Github</a>
+  <a href="https://github.com/hugo-xie">ZhiHu</a>
+  <a href="https://github.com/hugo-xie">DouBan</a>
+  <a href="https://github.com/hugo-xie">WeiBo</a>
+</div>
+<div class="mainblog">
+  <div class="blogsiderbar" id="content1">
+       <div style="width: 100px;height: 100px;background-color: white;border-radius: 50px;background-image: url(/images/person.jpeg);background-size: 100% 100%"></div>
+      <div style="color: white;font-size: 1.5em;font-weight: bold;">Hugo Xie</div>
+      <div style="color: rgb(181,181,181);font-size: 1em;">Front End Developer</div>
+  </div>
+  <div class="phoneblogsiderbar" id="content1">
+    <div style="width: 100px;height: 100px;background-color: white;border-radius: 50px;background-image: url(/images/person.jpeg);background-size: 100% 100%"></div>
+    <div style="color: white;font-size: 1.5em;font-weight: bold;">Hugo Xie</div>
+    <div style="color: rgb(181,181,181);font-size: 1em;">Front End Developer</div>
+  </div>
+  <div class="blogcontent" >
+  <div style="width: 80%;margin-left: 10%;"id="content2">
+    <h2>javascript中的Generator函数</h2>
+<p>Generator函数是ES6提出的一个新的函数方式，它不同于普通的函数:</p>
+<h3>首先</h3>
+<p>它的声明方式和普通函数不同，它需要在function关键字和函数名之间有一个星号；</p>
+<h3>其次</h3>
+<p>函数体内部使用yield语句，yield语句只能用在generator函数中，用在普通函数中会报错;Generator函数调用方法和普通函数一样，但是如果generator函数中包含yield语句的话，那么Generator函数不会立刻执行完，而是会在遇到yield语句后停止运行，这是如果需要继续执行，则需要调用next方法。</p>
+
+<p>yield语句和return语句有些相似，都能返回紧跟在yield语句后面的那个表达式的值,比如说:</p>
+<div style="background-color: rgb(238,243,240);border:2px dotted rgb(34,195,170);border-radius: 8px;color: green;">
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="o">*</span> <span class="nx">helloworldgenerator</span><span class="p">(){</span>
+  <span class="k">yield</span> <span class="kd">function</span> <span class="nx">test</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'函数已经执行'</span><span class="p">)</span><span class="err">；</span>
+    <span class="k">return</span> <span class="s2">"test"</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="k">yield</span> <span class="s1">'world'</span><span class="p">;</span>
+  <span class="k">return</span> <span class="s1">'ending'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">hw</span> <span class="o">=</span> <span class="nx">helloworldgenerator</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hw</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span></code></pre></figure>
+
+</div>
+<p>上面的代码会输出</p>
+<h3>{ value: [Function: test], done: false }</h3>
+<p>可以看到后面的function并没有执行，但是，如果改成下面的代码</p>
+<div style="background-color: rgb(238,243,240);border:2px dotted rgb(34,195,170);border-radius: 8px;color: green;">
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="o">*</span> <span class="nx">helloworldgenerator</span><span class="p">(){</span>
+  <span class="k">yield</span> <span class="kd">function</span> <span class="nx">test</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'函数已经执行'</span><span class="p">)</span><span class="err">；</span>
+    <span class="k">return</span> <span class="s2">"test"</span><span class="p">;</span>
+  <span class="p">}();</span>
+  <span class="k">yield</span> <span class="s1">'world'</span><span class="p">;</span>
+  <span class="k">return</span> <span class="s1">'ending'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">hw</span> <span class="o">=</span> <span class="nx">helloworldgenerator</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">hw</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span></code></pre></figure>
+
+</div>
+<p>结果是</p>
+<h3>{ value: 'test', done: false }</h3>
+<p>可以看到yield会执行函数，并把函数的范围值作为value.</p>
+
+<p>yield语句本身并没有返回值，或者说返回的是undefiend。但是next方法可以带一个参数，该参数就会被当作上一个yield语句的返回值。比如</p>
+<div style="background-color: rgb(238,243,240);border:2px dotted rgb(34,195,170);border-radius: 8px;color: green;">
+  
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="kd">function</span><span class="o">*</span> <span class="nx">f</span><span class="p">(){</span>
+    <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="kc">true</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">reset</span> <span class="o">=</span> <span class="k">yield</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">reset</span><span class="p">){</span> <span class="nx">i</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;}</span>
+  <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="kd">let</span> <span class="nx">g</span> <span class="o">=</span> <span class="nx">f</span><span class="p">();</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">g</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">g</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">g</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span></code></pre></figure>
+
+</div>
+
+<p>这段代码的输出是
+{ value: 0, done: false }
+{ value: 1, done: false }
+{ value: 0, done: false }
+有的时候需要在一个Generator函数中去调用另一个Generator函数，这个时候直接调用是没有效果的，这个时候句需要yield*语句,比如</p>
+<div style="background-color: rgb(238,243,240);border:2px dotted rgb(34,195,170);border-radius: 8px;color: green;">
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span><span class="o">*</span> <span class="nx">foo</span><span class="p">(){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"foo 函数运行"</span><span class="p">);</span>
+  <span class="k">yield</span> <span class="s1">'a'</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"foo函数继续运行"</span><span class="p">);</span>
+  <span class="k">yield</span> <span class="s1">'b'</span><span class="p">;</span>
+ <span class="p">}</span>
+ <span class="kd">function</span><span class="o">*</span> <span class="nx">bar</span><span class="p">(){</span>
+  <span class="k">yield</span> <span class="s1">'x'</span><span class="p">;</span>
+  <span class="k">yield</span><span class="o">*</span> <span class="nx">foo</span><span class="p">();</span>
+  <span class="k">yield</span> <span class="s1">'y'</span><span class="p">;</span>
+ <span class="p">}</span></code></pre></figure>
+
+</div>
+<p>当我们调用其他Generator函数时,我们可能无法知道有多少个yield,这时如果我们想要一次运行完所有的代码，我们如果一个next方法一个next方法调用，未免有一些太冗余了，这是我们可以调用for…of…来运行，比如上面的bar()函数，我们可以像下面这样运行。</p>
+<div style="background-color: rgb(238,243,240);border:2px dotted rgb(34,195,170);border-radius: 8px;color: green;">
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">v</span> <span class="nx">of</span> <span class="nx">bar</span><span class="p">()){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">v</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+</div>
+<p>最终的运行结果是</p>
+<div style="background-color: #FFF0F5;border:2px dotted red;border-radius: 8px;color:gray;">
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">//x</span>
+<span class="c1">//foo函数运行</span>
+<span class="c1">//a</span>
+<span class="c1">//foo函数继续运行</span>
+<span class="c1">//b</span>
+<span class="c1">//y</span></code></pre></figure>
+
+</div>
+<p>更多的关于Generator函数的知识可以参考官方文档,或者观看阮一峰老师的<a href="http://es6.ruanyifeng.com/">ECMAScript 6 入门</a></p>
+
+  </div>
+  
+  </div>
+</div>
+<script type="text/javascript">
+  var content1 = document.getElementById('content1');
+  var content2 = document.getElementById('content2');
+  var content3 = document.getElementById('content3');
+  var content3 = document.getElementById('content4');
+  var height = window.innerHeight-90;
+   var height2 = window.innerHeight-200;
+   var height3 = window.innerHeight*0.38;
+  content1.style.height = height+'px';
+  content2.style.height = height+'px';
+  content3.style.height = height2+'px';
+  content4.style.height = height3+'px';
+  console.log(main[0].style.height);
+</script>
+</body>
+</html>

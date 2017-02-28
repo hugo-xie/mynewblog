@@ -1,0 +1,96 @@
+.header{
+  width: 100%;
+  background-color: rgb(44, 60, 73);
+
+  color: white;
+  line-height: 50px;
+}
+
+.secondheader{
+  width: 100%;
+  line-height:40px;
+  background-color: rgb(236,236,236);
+}
+
+.maincontent{
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(44,60,73);
+}
+
+.intro{
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.postblog{
+   width: 35%;
+   overflow-y: scroll;
+}
+
+.mainblog{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.blogsiderbar{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(44,60,73);
+}
+// .nblogsiderbar{
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: rgb(44,60,73);
+// }
+.blogcontent{
+  width: 80%;
+  overflow: scroll;
+}
+.phoneblogsiderbar{
+  display: none;
+}
+
+
+@media screen and (max-width: 800px){
+  .intro{
+    display: none;
+  }
+  .postblog{
+   width: 100%;
+   overflow: scroll;
+   font-size: 0.9em;
+}
+.mainblog{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.blogsiderbar{
+  display: none;
+}
+.blogcontent{
+  width: 100%;
+  overflow: visible;
+}
+.phoneblogsiderbar{
+  width: 100%;
+  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(44,60,73);
+  height: 200px;
+}
+}

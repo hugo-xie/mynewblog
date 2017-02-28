@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>hugo hugo</title>
+  <title>hugo的个人网站</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="applicable-device"content="pc,mobile"/>
+  <link rel="stylesheet" href="/images/new.css">
   <style type="text/css">
   a{
     color: rgb(181,181,181);
     text-decoration: none;
     margin-left: 50px;
+    display: inline-block;
   }
   a:hover{
     color: rgb(44,60,73);
@@ -20,40 +25,26 @@
 <div style="width: 100%;background-color: rgb(44,60,73);color:white;line-height: 50px; ">
    <a href="/" style="color: white">Hugo的个人网站</a>
 </div>
-<div style="width: 100%;height: 40px;display: flex;flex-direction: row;justify-content:flex-start;align-items: center;background-color: rgb(236,236,236);">
+<div style="width: 100%;line-height:40px;background-color: rgb(236,236,236);">
   <a href="/">Home</a>
   <a href="https://github.com/hugo-xie">Github</a>
   <a href="https://github.com/hugo-xie">ZhiHu</a>
   <a href="https://github.com/hugo-xie">DouBan</a>
   <a href="https://github.com/hugo-xie">WeiBo</a>
 </div>
-<div style="display: flex;flex-direction: row;align-items: center;justify-content: center;">
-  <div style="width: 20%;display: flex;flex-direction: column;justify-content: center;align-items: center;background-color: rgb(44,60,73);" id="content1">
-   <!--  <div style="width: 85%;border: 2px solid lightgray;border-radius: 5px;border-bottom: none;" id="content3">
-      <div id="content4" style="background-image: url(/images/person.jpeg);background-size: 100% 100%"></div>
-    </div>
-    <div style="width: 85%;border: 2px solid lightgray" >
-     <span style="font-size: 2em;font-weight: bold;">Hugo Xie</span>
-     <br>
-     <span style="font-size: 1.5em;color: rgb(181,181,181)">漫画/code/旅游</span>
-    </div>
-    <div style="width: 85%;border: 2px solid lightgray;border-top: none" >
-     <span style="font-size: 1.2em;font-weight: bold;">Shanghai</span>
-     <br>
-     <span style="font-size: 10%;color: rgb(181,181,181)">86xieyu@tongji.edu.cn</span>
-    </div> -->
+<div class="mainblog">
+  <div class="blogsiderbar" id="content1">
+       <div style="width: 100px;height: 100px;background-color: white;border-radius: 50px;background-image: url(/images/person.jpeg);background-size: 100% 100%"></div>
+      <div style="color: white;font-size: 1.5em;font-weight: bold;">Hugo Xie</div>
+      <div style="color: rgb(181,181,181);font-size: 1em;">Front End Developer</div>
+  </div>
+  <div class="phoneblogsiderbar" id="content1">
     <div style="width: 100px;height: 100px;background-color: white;border-radius: 50px;background-image: url(/images/person.jpeg);background-size: 100% 100%"></div>
     <div style="color: white;font-size: 1.5em;font-weight: bold;">Hugo Xie</div>
     <div style="color: rgb(181,181,181);font-size: 1em;">Front End Developer</div>
-    <!-- <div style="border:1px dotted lightgreen;width: 100%"></div>
-    <div style="margin-top: 10%"></div>
-    <div style="color: rgb(181,181,181);font-size: 1em;"><span style="color: green">EMAIL:</span>86xieyu@tongji.edu.cn</div>
-    <div style="color: rgb(181,181,181);font-size: 1em;"><span style="color: pink">PHONE:</span>这个就不说了</div>
-    <div style="margin-top: 10%"></div>
-    <div style="color: white;font-size: 1.5em;font-weight: bold;">EDUCATION</div> -->
   </div>
-  <div style="width: 80%;" >
-  <div style="width: 80%;margin-left: 10%;overflow: scroll"id="content2">
+  <div class="blogcontent" >
+  <div style="width: 80%;margin-left: 10%;"id="content2">
     {{content}}
   </div>
   
